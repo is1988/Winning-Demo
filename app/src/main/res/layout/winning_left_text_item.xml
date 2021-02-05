@@ -7,14 +7,14 @@
     android:padding="5dp">
 
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/home_robot_photo_ic" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_left"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="50dp"
         android:background="@drawable/home_msg_left"

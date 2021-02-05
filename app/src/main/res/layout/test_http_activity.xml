@@ -41,7 +41,7 @@
             android:layout_marginTop="15dp"
             android:text="Post访问（关键字检索）" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_json"
             android:layout_marginTop="15dp"
             android:layout_width="wrap_content"

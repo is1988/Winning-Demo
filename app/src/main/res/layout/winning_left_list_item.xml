@@ -7,7 +7,7 @@
     android:padding="5dp">
 
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/home_robot_photo_ic" />
@@ -24,7 +24,7 @@
         android:orientation="vertical">
 
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_left"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

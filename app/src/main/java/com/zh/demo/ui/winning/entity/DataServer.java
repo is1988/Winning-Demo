@@ -145,6 +145,17 @@ public class DataServer {
         return list;
     }
 
+    public static List<QuickMultipleEntity> getMsgItemPersonalData() {
+        List<QuickMultipleEntity> list = new ArrayList<>();
+        list.add(new QuickMultipleEntity(QuickMultipleEntity.LEFT_TEXT));
+        list.add(new QuickMultipleEntity(QuickMultipleEntity.LEFT_TEXT));
+        list.add(new QuickMultipleEntity(QuickMultipleEntity.RIGHT_TEXT));
+        list.add(new QuickMultipleEntity(QuickMultipleEntity.LEFT_TEXT));
+
+        return list;
+    }
+
+
     public static List<String> getMsgItemItemData() {
         List<String> list = new ArrayList<>();
         list.add("睡眠不好");
@@ -161,6 +172,22 @@ public class DataServer {
         List<PageType> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             list.add(new PageType(arr[i], i));
+        }
+        return list;
+    }
+
+    public static List<CommonItem> getCommonData() {
+        List<CommonItem> list = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            list.add(new CommonItem("标题-" + i, "2021-02-05 15:42:37"));
+        }
+        return list;
+    }
+
+    public static List<CommonItem> getCommonData(int size) {
+        List<CommonItem> list = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            list.add(new CommonItem("标题-" + i, ""));
         }
         return list;
     }
