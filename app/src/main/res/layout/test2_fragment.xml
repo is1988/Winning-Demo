@@ -15,32 +15,10 @@
         app:title="@string/home_nav_found" />
 
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_page"
-                android:text="页面跳转"
-                style="@style/Home2BtnStyle" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_type_list"
-                android:text="多类型列表"
-                style="@style/Home2BtnStyle" />
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_msg_list"
-                android:text="聊天列表"
-                style="@style/Home2BtnStyle" />
-
-
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

@@ -156,6 +156,16 @@ public class DataServer {
         return list;
     }
 
+
+    public static List<PageType> getPageTypeData(String[] arr) {
+        List<PageType> list = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            list.add(new PageType(arr[i], i));
+        }
+        return list;
+    }
+
+
 //    public static List<DelegateMultiEntity> getDelegateMultiItemData() {
 //        List<DelegateMultiEntity> list = new ArrayList<>();
 //        for (int i = 0; i <= 40; i++) {

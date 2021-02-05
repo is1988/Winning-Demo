@@ -7,6 +7,7 @@ import com.zh.demo.R;
 import com.zh.demo.aop.SingleClick;
 import com.zh.demo.common.MyActivity;
 import com.zh.demo.http.glide.GlideApp;
+import com.zh.demo.other.KeyboardWatcher;
 import com.zh.widget.view.CountdownView;
 import com.zh.widget.view.SwitchButton;
 
@@ -15,7 +16,7 @@ import com.zh.widget.view.SwitchButton;
  * ———— time : 2021/01/28   Thursday
  * ———— desc :
  */
-public class TestModActivity extends MyActivity implements SwitchButton.OnCheckedChangeListener{
+public class TestModActivity extends MyActivity implements SwitchButton.OnCheckedChangeListener , KeyboardWatcher.SoftKeyboardStateListener{
 
     private ImageView mCircleView;
     private SwitchButton mSwitchButton;
@@ -36,6 +37,8 @@ public class TestModActivity extends MyActivity implements SwitchButton.OnChecke
 
         mSwitchButton.setOnCheckedChangeListener(this);
 
+        KeyboardWatcher.with(this)
+                .setListener(this);
     }
 
     @Override
@@ -60,5 +63,15 @@ public class TestModActivity extends MyActivity implements SwitchButton.OnChecke
     @Override
     public void onCheckedChanged(SwitchButton button, boolean isChecked) {
         toast(isChecked);
+    }
+
+    @Override
+    public void onSoftKeyboardOpened(int keyboardHeight) {
+
+    }
+
+    @Override
+    public void onSoftKeyboardClosed() {
+
     }
 }

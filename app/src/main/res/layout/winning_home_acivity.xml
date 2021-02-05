@@ -1,140 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#031034"
-    android:padding="15dp"
     android:orientation="vertical">
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@drawable/home_robot_photo"/>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="我是机器人小卫，可以为您提供智能全面的医疗服务哦~"
-            android:singleLine="true"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:background="@drawable/home_top_pup_bg"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="#012559"
-        android:padding="15dp"
-        android:orientation="vertical">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="返回个人主页"
-            android:singleLine="true"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:background="@drawable/home_top_back_bg"/>
-
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:padding="15dp">
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:orientation="horizontal"
-            android:divider="@drawable/home_icon_bg"
-            android:layout_marginTop="15dp">
-            
-            <LinearLayout style="@style/HomeIconStyle">
+            android:layout_height="46dp"
+            android:orientation="horizontal">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/home_hesuan_ic"/>
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:text="核酸检测"
-                    android:layout_marginTop="10dp"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="5dp"
-                android:layout_height="match_parent"/>
-
-            <LinearLayout style="@style/HomeIconStyle">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/home_daozhen_ic"/>
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:text="智能导诊"
-                    android:layout_marginTop="10dp"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="5dp"
-                android:layout_height="match_parent"/>
-
-            <LinearLayout style="@style/HomeIconStyle">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/home_daohang_ic"/>
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:text="问路导航"
-                    android:layout_marginTop="10dp"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="5dp"
-                android:layout_height="match_parent"/>
-
-            <LinearLayout style="@style/HomeIconStyle">
-                
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/home_guahao_ic"/>
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:text="预约挂号"
-                    android:layout_marginTop="10dp"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"/>
-                
-            </LinearLayout>
-
-            
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/home_robot_photo" />
 
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/home_top_pup_bg"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:text="我是机器人小卫，可以为您提供智能全面的医疗服务哦~"
+                android:textColor="@color/white" />
         </LinearLayout>
-    </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#012559"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            android:padding="15dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/home_top_back_bg"
+                android:gravity="center"
+                android:singleLine="true"
+                android:drawableLeft="@drawable/back_10"
+                android:text="返回个人主页"
+                android:textColor="@color/white" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="15dp"
+                android:divider="@drawable/home_icon_bg"
+                android:orientation="horizontal">
+
+                <LinearLayout style="@style/HomeIconStyle">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/home_hesuan_ic" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="核酸检测" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout style="@style/HomeIconStyle">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/home_daozhen_ic" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="智能导诊" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout style="@style/HomeIconStyle">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/home_daohang_ic" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="问路导航" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout style="@style/HomeIconStyle">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/home_guahao_ic" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="预约挂号" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp" />
+    </LinearLayout>
 </LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="page_type">
+        <item>首页</item>
+        <item>聊天页</item>
+        <item>多类型</item>
+    </string-array>
+</resources>
