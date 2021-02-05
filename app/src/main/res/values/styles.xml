@@ -109,4 +109,13 @@
         <item name="android:layout_weight">1</item>
     </style>
 
+    <style name="Home2BtnStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_margin">15dp</item>
+        <item name="android:background">@drawable/test_home_bg7</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
 </resources>

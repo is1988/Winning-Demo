@@ -255,6 +255,8 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.winning.WinningHomeActivity" />
+        <activity android:name=".ui.winning.WinningMsgListActivity" />
+        <activity android:name=".ui.winning.WinningTypeListActivity" />
 
 
     </application>
