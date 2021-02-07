@@ -259,6 +259,7 @@
         <activity android:name=".ui.winning.WinningMsgListActivity" />
         <activity android:name=".ui.winning.WinningTypeListActivity" />
         <activity android:name=".ui.winning.WinningPersonalDataActivity" />
+        <activity android:name=".ui.winning.WinningSelectOfficeActivity" />
 
 
     </application>

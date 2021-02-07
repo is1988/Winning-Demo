@@ -12,6 +12,8 @@ import com.zh.demo.R;
 import com.zh.demo.common.MyFragment;
 import com.zh.demo.ui.winning.WinningHomeActivity;
 import com.zh.demo.ui.winning.WinningMsgListActivity;
+import com.zh.demo.ui.winning.WinningPersonalDataActivity;
+import com.zh.demo.ui.winning.WinningSelectOfficeActivity;
 import com.zh.demo.ui.winning.WinningTypeListActivity;
 import com.zh.demo.ui.winning.adapter.PageTypeListAdapter;
 import com.zh.demo.ui.winning.entity.DataServer;
@@ -28,7 +30,10 @@ public class Test2Fragment extends MyFragment<TestHomeActivity> {
 
     private RecyclerView mRvList;
 
-    private Class[] clz = {WinningHomeActivity.class, WinningTypeListActivity.class, WinningMsgListActivity.class};
+    private String[] name = {"机器人首页", "个人信息页", "科室选择", "单独聊天页", "多类型页面"};
+    private Class[] clz = {WinningHomeActivity.class, WinningPersonalDataActivity.class,
+            WinningSelectOfficeActivity.class, WinningMsgListActivity.class, WinningTypeListActivity.class};
+
 
     @Override
     protected int getLayoutId() {
@@ -44,7 +49,7 @@ public class Test2Fragment extends MyFragment<TestHomeActivity> {
     @Override
     protected void initData() {
 
-        final List<PageType> data = DataServer.getPageTypeData(getResources().getStringArray(R.array.page_type));
+        final List<PageType> data = DataServer.getPageTypeData(name);
         final PageTypeListAdapter adapter = new PageTypeListAdapter(data);
         final GridLayoutManager manager = new GridLayoutManager(getAttachActivity(), 4);
         mRvList.setLayoutManager(manager);

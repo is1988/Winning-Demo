@@ -187,7 +187,7 @@ public class DataServer {
     public static List<CommonItem> getCommonData(int size) {
         List<CommonItem> list = new ArrayList<>();
         for (int i = 0; i < size; i++) {
-            list.add(new CommonItem("标题-" + i, ""));
+            list.add(new CommonItem("科室" + i, ""));
         }
         return list;
     }
