@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/home_icon_bg"
+    android:padding="10dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="10dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_head"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/ic_launcher_round"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="医生"
+        android:layout_toRightOf="@+id/iv_head"
+        android:gravity="center"
+        android:maxLength="4"
+        android:layout_marginLeft="10dp"
+        android:textSize="18sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="主治医师"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/iv_head"
+        android:gravity="center"
+        android:maxLength="4"
+        android:textColor="#4471B6"
+        android:layout_marginLeft="10dp"
+        android:textSize="14sp" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="专家"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:maxLength="4"
+        android:textColor="#FF00BD88"
+        android:background="@drawable/winning_doctor_line_bg"
+        android:layout_marginLeft="10dp"
+        android:textSize="14sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_am"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上午余号：13"
+        android:layout_below="@+id/iv_head"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="#003560"
+        android:layout_marginLeft="10dp"
+        android:textSize="14sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_pm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下午余号：4"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/iv_head"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="#003560"
+        android:layout_marginLeft="10dp"
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tv_am"
+        android:background="@drawable/winning_dotted_line_shape" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:text="¥ 10.00"
+        android:layout_below="@+id/view1"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="#FF934B"
+        android:layout_marginLeft="10dp"
+        android:textSize="18sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_register"
+        android:layout_width="80dp"
+        android:layout_height="36dp"
+        android:text="挂号"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/view1"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="10dp"
+        android:background="#1469EE"
+        android:textSize="18sp" />
+
+</RelativeLayout>

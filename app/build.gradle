@@ -5,6 +5,9 @@ apply from: 'proguard.gradle'
 
 android {
 
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+
     defaultConfig {
 
         // 无痛修改包名（推荐使用第二种方案）：https://www.jianshu.com/p/17327e191d2e
@@ -161,6 +164,9 @@ dependencies {
 
     // 多功能适配器：https://github.com/CymChad/BaseRecyclerViewAdapterHelper
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    // 日志打印：https://github.com/pengwei1024/LogUtils
+    implementation 'com.apkfuns.logutils:library:1.7.5'
 
     // 国际化：https://github.com/getActivity/MultiLanguages
     // 悬浮窗：https://github.com/getActivity/XToast

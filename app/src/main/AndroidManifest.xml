@@ -260,6 +260,8 @@
         <activity android:name=".ui.winning.WinningTypeListActivity" />
         <activity android:name=".ui.winning.WinningPersonalDataActivity" />
         <activity android:name=".ui.winning.WinningSelectOfficeActivity" />
+        <activity android:name=".ui.winning.WinningSelectDoctorActivity" />
+        <activity android:name=".ui.winning.WinningSelectDoctorActivity2" />
 
 
     </application>

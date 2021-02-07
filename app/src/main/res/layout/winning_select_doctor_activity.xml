@@ -36,7 +36,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:singleLine="true"
-                android:text="请告诉我您要预约的科室~"
+                android:text="请告诉我您要预约的医生~"
                 android:textColor="@color/white" />
         </LinearLayout>
 
@@ -48,8 +48,57 @@
             android:padding="15dp"
             android:layout_marginTop="15dp">
 
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.zh.demo.widget.CustomRadioButton
+                    android:id="@+id/rb_am"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:padding="10dp"
+                    android:drawablePadding="10dp"
+                    android:text="上午"
+                    android:textColor="@color/white"
+                    android:drawableLeft="@drawable/winning_radiobutton_selector"
+                    android:checked="true" />
+
+                <com.zh.demo.widget.CustomRadioButton
+                    android:id="@+id/rb_pm"
+                    android:layout_width="wrap_content"
+                    android:padding="10dp"
+                    android:button="@null"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="下午"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/white"
+                    android:drawableLeft="@drawable/winning_radiobutton_selector" />
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/home_top_back_bg"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:singleLine="true"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:drawableRight="@drawable/winning_arrows_bottom_ic"
+                android:text="02-07 星期日"
+                android:textColor="@color/white" />
+
+
+
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_list"
+                android:layout_below="@+id/radio_group"
                 android:layout_width="match_parent"
                 android:layout_above="@+id/layout1"
                 android:layout_height="match_parent"/>

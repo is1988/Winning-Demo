@@ -11,10 +11,10 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.zh.demo.R;
 import com.zh.demo.common.MyFragment;
 import com.zh.demo.ui.winning.WinningHomeActivity;
-import com.zh.demo.ui.winning.WinningMsgListActivity;
 import com.zh.demo.ui.winning.WinningPersonalDataActivity;
+import com.zh.demo.ui.winning.WinningSelectDoctorActivity;
+import com.zh.demo.ui.winning.WinningSelectDoctorActivity2;
 import com.zh.demo.ui.winning.WinningSelectOfficeActivity;
-import com.zh.demo.ui.winning.WinningTypeListActivity;
 import com.zh.demo.ui.winning.adapter.PageTypeListAdapter;
 import com.zh.demo.ui.winning.entity.DataServer;
 import com.zh.demo.ui.winning.entity.PageType;
@@ -30,9 +30,9 @@ public class Test2Fragment extends MyFragment<TestHomeActivity> {
 
     private RecyclerView mRvList;
 
-    private String[] name = {"机器人首页", "个人信息页", "科室选择", "单独聊天页", "多类型页面"};
+    private String[] name = {"机器人首页", "个人信息页", "科室选择", "医生选择1", "医生选择2"};
     private Class[] clz = {WinningHomeActivity.class, WinningPersonalDataActivity.class,
-            WinningSelectOfficeActivity.class, WinningMsgListActivity.class, WinningTypeListActivity.class};
+            WinningSelectOfficeActivity.class, WinningSelectDoctorActivity.class, WinningSelectDoctorActivity2.class};
 
 
     @Override

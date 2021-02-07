@@ -13,6 +13,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LifecycleRegistry;
 
+import com.apkfuns.logutils.LogUtils;
 import com.billy.android.swipe.SmartSwipeBack;
 import com.hjq.bar.TitleBar;
 import com.hjq.bar.initializer.LightBarInitializer;
@@ -165,6 +166,9 @@ public final class MyApplication extends Application implements LifecycleOwner {
         } else {
             server = new ReleaseServer();
         }
+
+        LogUtils.e(AppConfig.isDebug());
+        LogUtils.e(server);
 
         EasyConfig.with(new OkHttpClient())
                 // 是否打印日志

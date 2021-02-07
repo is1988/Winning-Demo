@@ -10,6 +10,6 @@ public class TestServer extends ReleaseServer {
 
     @Override
     public String getHost() {
-        return "https://www.wanandroid.com/";
+        return "http://58.33.101.66:9004/";
     }
 }

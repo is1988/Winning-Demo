@@ -4,17 +4,17 @@ import android.text.InputType;
 import android.view.View;
 
 import com.google.gson.Gson;
+import com.hjq.http.EasyHttp;
+import com.hjq.http.listener.HttpCallback;
 import com.zh.base.BaseDialog;
 import com.zh.demo.R;
 import com.zh.demo.common.MyActivity;
 import com.zh.demo.http.model.HttpData;
 import com.zh.demo.http.request.SearchAuthorApi;
-import com.zh.demo.http.request.SearchBlogsApi;
 import com.zh.demo.http.response.SearchBean;
 import com.zh.demo.ui.activity.BrowserActivity;
 import com.zh.demo.ui.dialog.InputDialog;
-import com.hjq.http.EasyHttp;
-import com.hjq.http.listener.HttpCallback;
+import com.zh.demo.ui.test.http.TestLoginApi;
 
 /**
  * ———— author : 郑皓
@@ -86,14 +86,25 @@ public class TestHttpActivity extends MyActivity {
 
     private void post() {
 
+//        EasyHttp.post(this)
+//                .api(new SearchBlogsApi()
+//                        .setKeyword("搬砖不再有"))
+//                .request(new HttpCallback<HttpData<SearchBean>>(this) {
+//
+//                    @Override
+//                    public void onSucceed(HttpData<SearchBean> result) {
+//                        setText(result.getData());
+//                    }
+//                });
+
         EasyHttp.post(this)
-                .api(new SearchBlogsApi()
-                        .setKeyword("搬砖不再有"))
-                .request(new HttpCallback<HttpData<SearchBean>>(this) {
+                .api(new TestLoginApi()
+                        .setParams("winning","winning"))
+                .request(new HttpCallback<String>(this) {
 
                     @Override
-                    public void onSucceed(HttpData<SearchBean> result) {
-                        setText(result.getData());
+                    public void onSucceed(String result) {
+                        mTvJson.setText(result);
                     }
                 });
 
