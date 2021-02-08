@@ -12,14 +12,14 @@ public final class SearchAuthorApi implements IRequestApi {
 
     @Override
     public String getApi() {
-        return "article/list/0/json";
+        return "AppApi/testArrayApi";
     }
 
     /** 作者昵称，不支持模糊匹配 */
-    private String author;
+    private String testString;
 
     public SearchAuthorApi setAuthor(String author) {
-        this.author = author;
+        this.testString = author;
         return this;
     }
 }

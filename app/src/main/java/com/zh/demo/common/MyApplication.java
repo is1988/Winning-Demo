@@ -17,22 +17,21 @@ import com.apkfuns.logutils.LogUtils;
 import com.billy.android.swipe.SmartSwipeBack;
 import com.hjq.bar.TitleBar;
 import com.hjq.bar.initializer.LightBarInitializer;
-import com.zh.demo.action.SwipeAction;
-import com.zh.demo.helper.ActivityStackManager;
-import com.zh.demo.http.model.RequestHandler;
-import com.zh.demo.http.server.ReleaseServer;
-import com.zh.demo.http.server.TestServer;
-import com.zh.demo.other.AppConfig;
-import com.zh.demo.other.CrashHandler;
 import com.hjq.http.EasyConfig;
 import com.hjq.http.config.IRequestServer;
 import com.hjq.toast.ToastInterceptor;
 import com.hjq.toast.ToastUtils;
-import com.zh.umeng.UmengClient;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.tencent.bugly.crashreport.CrashReport;
+import com.zh.demo.action.SwipeAction;
+import com.zh.demo.helper.ActivityStackManager;
+import com.zh.demo.http.model.RequestHandler;
+import com.zh.demo.http.server.TestServer;
+import com.zh.demo.other.AppConfig;
+import com.zh.demo.other.CrashHandler;
+import com.zh.umeng.UmengClient;
 
 import okhttp3.OkHttpClient;
 
@@ -161,11 +160,11 @@ public final class MyApplication extends Application implements LifecycleOwner {
 
         // 网络请求框架初始化
         IRequestServer server;
-        if (AppConfig.isDebug()) {
+//        if (AppConfig.isDebug()) {
             server = new TestServer();
-        } else {
-            server = new ReleaseServer();
-        }
+//        } else {
+//            server = new ReleaseServer();
+//        }
 
         LogUtils.e(AppConfig.isDebug());
         LogUtils.e(server);

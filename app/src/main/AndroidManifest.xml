@@ -262,6 +262,8 @@
         <activity android:name=".ui.winning.WinningSelectOfficeActivity" />
         <activity android:name=".ui.winning.WinningSelectDoctorActivity" />
         <activity android:name=".ui.winning.WinningSelectDoctorActivity2" />
+        <activity android:name=".ui.winning.WinningLoginActivity" />
+        <activity android:name=".ui.winning.WinningLoginSuccessActivity" />
 
 
     </application>

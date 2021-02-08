@@ -9,7 +9,6 @@ import com.hjq.http.listener.HttpCallback;
 import com.zh.base.BaseDialog;
 import com.zh.demo.R;
 import com.zh.demo.common.MyActivity;
-import com.zh.demo.http.model.HttpData;
 import com.zh.demo.http.request.SearchAuthorApi;
 import com.zh.demo.http.response.SearchBean;
 import com.zh.demo.ui.activity.BrowserActivity;
@@ -113,12 +112,12 @@ public class TestHttpActivity extends MyActivity {
     private void get() {
         EasyHttp.get(this)
                 .api(new SearchAuthorApi()
-                        .setAuthor("鸿洋"))
-                .request(new HttpCallback<HttpData<SearchBean>>(this) {
+                        .setAuthor("winning88"))
+                .request(new HttpCallback<String>(this) {
 
                     @Override
-                    public void onSucceed(HttpData<SearchBean> result) {
-                        setText(result.getData());
+                    public void onSucceed(String result) {
+                        mTvJson.setText(result);
                     }
 
                     @Override

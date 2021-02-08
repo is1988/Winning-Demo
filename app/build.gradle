@@ -168,6 +168,9 @@ dependencies {
     // 日志打印：https://github.com/pengwei1024/LogUtils
     implementation 'com.apkfuns.logutils:library:1.7.5'
 
+    // Android JSON viewer：https://github.com/smuyyh/JsonViewer
+    implementation 'com.yuyh.json:jsonviewer:1.0.6'
+
     // 国际化：https://github.com/getActivity/MultiLanguages
     // 悬浮窗：https://github.com/getActivity/XToast
     // 工具类：https://github.com/Blankj/AndroidUtilCode
