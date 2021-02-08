@@ -39,12 +39,10 @@ public final class SplashActivity extends MyActivity {
     protected void initView() {
         mLottieView = findViewById(R.id.iv_splash_lottie);
         mDebugView = findViewById(R.id.iv_splash_debug);
-        // 设置动画监听
-        mLottieView.addAnimatorListener(new AnimatorListenerAdapter() {
 
+        mLottieView.addAnimatorListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
-//                startActivity(HomeActivity.class);
                 startActivity(TestHomeActivity.class);
                 finish();
             }

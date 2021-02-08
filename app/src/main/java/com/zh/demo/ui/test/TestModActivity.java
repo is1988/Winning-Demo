@@ -8,6 +8,7 @@ import com.zh.demo.aop.SingleClick;
 import com.zh.demo.common.MyActivity;
 import com.zh.demo.http.glide.GlideApp;
 import com.zh.demo.other.KeyboardWatcher;
+import com.zh.demo.ui.activity.HomeActivity;
 import com.zh.widget.view.CountdownView;
 import com.zh.widget.view.SwitchButton;
 
@@ -47,6 +48,12 @@ public class TestModActivity extends MyActivity implements SwitchButton.OnChecke
                 .load(R.drawable.example_bg)
                 .circleCrop()
                 .into(mCircleView);
+
+
+        mCircleView.setOnLongClickListener(v -> {
+            startActivity(HomeActivity.class);
+            return false;
+        });
     }
 
 
