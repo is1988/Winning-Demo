@@ -4,6 +4,7 @@ import android.text.InputType;
 import android.view.View;
 
 import com.google.gson.Gson;
+import com.hjq.http.EasyConfig;
 import com.hjq.http.EasyHttp;
 import com.hjq.http.listener.HttpCallback;
 import com.zh.base.BaseDialog;
@@ -14,6 +15,11 @@ import com.zh.demo.http.response.SearchBean;
 import com.zh.demo.ui.activity.BrowserActivity;
 import com.zh.demo.ui.dialog.InputDialog;
 import com.zh.demo.ui.test.http.TestLoginApi;
+import com.zh.demo.ui.test.http.TestTimeOutApi;
+
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
 
 /**
  * ———— author : 郑皓
@@ -22,6 +28,10 @@ import com.zh.demo.ui.test.http.TestLoginApi;
  */
 public class TestHttpActivity extends MyActivity {
     private android.widget.TextView mTvJson;
+    private android.widget.Button mBtnTimeOut;
+    private android.widget.Button mBtnBaidu;
+    private android.widget.Button mBtnGet;
+    private android.widget.Button mBtnPost;
 
     @Override
     protected int getLayoutId() {
@@ -31,7 +41,7 @@ public class TestHttpActivity extends MyActivity {
     @Override
     protected void initView() {
 
-        setOnClickListener(R.id.btn_baidu, R.id.btn_get, R.id.btn_post);
+        setOnClickListener(R.id.btn_baidu, R.id.btn_get, R.id.btn_post,R.id.btn_time_out,R.id.btn_time_out30);
 
         mTvJson = findViewById(R.id.tv_json);
     }
@@ -50,7 +60,37 @@ public class TestHttpActivity extends MyActivity {
             get();
         } else if (id == R.id.btn_post) {
             post();
+        } else if (id == R.id.btn_time_out) {
+            timeOut(3000L);
+        } else if (id == R.id.btn_time_out30) {
+            timeOut(30000L);
         }
+    }
+
+    // 访问超时测试
+    private void timeOut(Long time) {
+
+        OkHttpClient.Builder builder = EasyConfig.getInstance().getClient().newBuilder();
+        builder.readTimeout(time, TimeUnit.MILLISECONDS);
+        builder.writeTimeout(time, TimeUnit.MILLISECONDS);
+        builder.connectTimeout(time, TimeUnit.MILLISECONDS);
+
+        EasyHttp.post(this)
+                .api(new TestTimeOutApi())
+                .client(builder.build())
+                .request(new HttpCallback<String>(this) {
+
+                    @Override
+                    public void onSucceed(String result) {
+                        mTvJson.setText(result);
+                    }
+
+                    @Override
+                    public void onFail(Exception e) {
+                        super.onFail(e);
+                        mTvJson.setText(e.getMessage());
+                    }
+                });
     }
 
     private void openLink() {

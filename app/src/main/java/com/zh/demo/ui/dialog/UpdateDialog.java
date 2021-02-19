@@ -11,21 +11,18 @@ import android.widget.TextView;
 
 import androidx.core.content.FileProvider;
 
+import com.hjq.http.EasyHttp;
+import com.hjq.http.listener.OnDownloadListener;
+import com.hjq.http.model.HttpMethod;
+import com.hjq.permissions.Permission;
 import com.zh.base.BaseDialog;
 import com.zh.demo.R;
 import com.zh.demo.aop.CheckNet;
 import com.zh.demo.aop.Permissions;
 import com.zh.demo.aop.SingleClick;
 import com.zh.demo.other.AppConfig;
-import com.hjq.http.EasyHttp;
-import com.hjq.http.listener.OnDownloadListener;
-import com.hjq.http.model.DownloadInfo;
-import com.hjq.http.model.HttpMethod;
-import com.hjq.permissions.Permission;
 
 import java.io.File;
-
-import okhttp3.Call;
 
 /**
  *    author : Android 轮子哥
@@ -158,7 +155,7 @@ public final class UpdateDialog {
                     .listener(new OnDownloadListener() {
 
                         @Override
-                        public void onStart(Call call) {
+                        public void onStart(File file) {
                             // 标记为下载中
                             mDownloading = true;
                             // 标记成未下载完成
@@ -171,13 +168,18 @@ public final class UpdateDialog {
                         }
 
                         @Override
-                        public void onProgress(DownloadInfo info) {
-                            mUpdateView.setText(String.format(getString(R.string.update_status_running), info.getDownloadProgress()));
-                            mProgressView.setProgress(info.getDownloadProgress());
+                        public void onByte(File file, long totalByte, long downloadByte) {
+
                         }
 
                         @Override
-                        public void onComplete(DownloadInfo info) {
+                        public void onProgress(File file, int progress) {
+                            mUpdateView.setText(String.format(getString(R.string.update_status_running), progress));
+                            mProgressView.setProgress(progress);
+                        }
+
+                        @Override
+                        public void onComplete(File file) {
                             mUpdateView.setText(R.string.update_status_successful);
                             // 标记成下载完成
                             mDownloadComplete = true;
@@ -185,16 +187,15 @@ public final class UpdateDialog {
                             installApk();
                         }
 
-                        @SuppressWarnings("ResultOfMethodCallIgnored")
                         @Override
-                        public void onError(DownloadInfo info, Exception e) {
+                        public void onError(File file, Exception e) {
                             mUpdateView.setText(R.string.update_status_failed);
                             // 删除下载的文件
-                            info.getFile().delete();
+                            file.delete();
                         }
 
                         @Override
-                        public void onEnd(Call call) {
+                        public void onEnd(File file) {
                             // 更新进度条
                             mProgressView.setProgress(0);
                             mProgressView.setVisibility(View.GONE);
@@ -205,6 +206,7 @@ public final class UpdateDialog {
                                 setCancelable(true);
                             }
                         }
+
                     }).start();
         }
 

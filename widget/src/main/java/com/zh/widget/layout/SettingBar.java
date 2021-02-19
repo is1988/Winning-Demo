@@ -21,7 +21,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 
-import com.hjq.widget.R;
+import com.zh.widget.R;
 
 /**
  *    author : Android 轮子哥

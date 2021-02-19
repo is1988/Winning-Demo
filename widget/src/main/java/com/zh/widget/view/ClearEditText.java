@@ -12,7 +12,7 @@ import android.view.View;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 
-import com.hjq.widget.R;
+import com.zh.widget.R;
 
 import java.util.Objects;
 
